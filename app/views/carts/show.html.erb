@@ -25,7 +25,9 @@
             TOTAL:
           </th>
           <th>
-            <%= cart_subtotal_cents / 100.0 %>
+            <%= number_to_currency(total = cart_subtotal_cents / 100 
+            )
+            %>
           </th>
         </tr>
       </tfoot>
