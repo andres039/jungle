@@ -1,3 +1,4 @@
+<% if enhanced_cart.length > 0 %>
 <section class="cart-show">
 
   <header class="page-header">
@@ -25,9 +26,7 @@
             TOTAL:
           </th>
           <th>
-            <%= number_to_currency(total = cart_subtotal_cents / 100 
-            )
-            %>
+            <%= cart_subtotal_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
@@ -52,3 +51,6 @@
   </div>
 
 </section>
+<% end %>
+<div class="alert alert-danger" role="alert">The cart is Empty</div>
+<%= link_to 'Home', controller = 'products#index' %>
