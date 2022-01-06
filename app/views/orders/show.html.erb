@@ -3,20 +3,22 @@
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
   </header>
-  <oder.total>
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
-  <p><%= @order.line_items.product %></p>
-  <p>Total order amount: <%= number_to_currency(@order.total_cents / 100) %></p>
-  <p> Email on file: <%= @order.email %> </p>
+  
+  <% @order.line_items.each do |item| %>
+  <ul class="list-group">
+   <li class="list-group-item"><%= item.product.name %></li>
+  <li class="list-group-item"> <img src="<%= item.product.image %>" style="width: 200px;" class="w-15" alt="Responsive image"> </li>
+  <li class="list-group-item"><%= item.product.description %></li>
+  <li class="list-group-item">Quantity ordered:<%= item.quantity %></li>
+  <li class="list-group-item">Item total:<%= number_to_currency(item.item_price)%>
+ </ul>
+<% end %>
+ <ul class="list-group">
+ <li class="list-group-item">Total order amount: <%= number_to_currency(@order.total_cents / 100) %></li>
+  <li class="list-group-item"> Email on file: <%= @order.email %> </li>
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
+  </ul>
 </section>
-
-
-# The line items in the order and:
-Their image, name and description
-Their respective quantities and line item totals 
-The final amount for the order
-The email that was used

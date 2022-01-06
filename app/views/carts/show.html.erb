@@ -51,6 +51,7 @@
   </div>
 
 </section>
-<% end %>
+<% else %>
 <div class="alert alert-danger" role="alert">The cart is Empty</div>
 <%= link_to 'Home', controller = 'products#index' %>
+<% end %>
