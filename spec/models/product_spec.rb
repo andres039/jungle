@@ -9,7 +9,7 @@ RSpec.describe Product, type: :model do
   end
 
  it "has a all fields set" do
-  expect(@product).to be_valid
+  expect(@product).to be_present
  end
 
  it "doesn't have a name" do
