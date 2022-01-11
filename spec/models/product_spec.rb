@@ -4,8 +4,8 @@ RSpec.describe Product, type: :model do
  describe 'Validations' do
     # validation tests/examples here
   before (:each) do
-   @category = Category.new(name: 'products')
-   @product = Product.new(name: 'donuts', price_cents: 25, quantity: 4, category:  @category)
+   @category = Category.create!(name: 'products')
+   @product = Product.create!(name: 'donuts', price_cents: 25, quantity: 4, category:  @category)
   end
 
  it "has a all fields set" do
