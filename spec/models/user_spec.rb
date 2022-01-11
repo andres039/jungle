@@ -21,21 +21,23 @@ RSpec.describe User, type: :model do
 
  describe 'Email' do 
  it "should be unique"
-end
+ end
 
  
-it "should include email" do
+ it "should include email" do
    expect(@user).to be_valid
-end
- it "should include first_name" do
- expect(@user).to be_valid
-end
-  it "should include last_name" do
-  expect(@user).to be_valid
-end
+ end
 
-it "should match the password confirmation" do
+ it "should include first_name" do
+  expect(@user).to be_valid
+ end
+
+ it "should include last_name" do
+  expect(@user).to be_valid
+ end
+
+ it "should match the password confirmation" do
   expect(user.password).to eq 'tooyoungtodie'
-end
+ end
 end
 end
