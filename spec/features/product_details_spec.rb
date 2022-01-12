@@ -17,12 +17,11 @@ RSpec.feature "Visitor sees product details", type: :feature, js: true do
     end
   end
 
-  scenario "They see details for a product" do
+  scenario "The product details:" do
     # ACT
     visit root_path
     first('article header').click
     # DEBUG
-    expect(page).to have_current_path('/products/10')
     expect(page).to have_css 'section.products-show'
     save_screenshot
   end
