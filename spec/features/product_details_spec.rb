@@ -20,9 +20,10 @@ RSpec.feature "Visitor sees product details", type: :feature, js: true do
   scenario "The product details:" do
     # ACT
     visit root_path
-    first('article header').click
+    first('footer button').click
     # DEBUG
-    expect(page).to have_css 'section.products-show'
+    #expect(page).to have_css 'section.products-show'
+    expect(page).to have_content('My Cart (1)')
     save_screenshot
   end
 end
